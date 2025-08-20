@@ -1,2 +1,2 @@
-# Vefforritun1
+# Vefforritun 1
 Verkefni unnin í áfanganum Vefforritun 1
