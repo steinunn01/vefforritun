@@ -180,7 +180,7 @@
                 lengd.innerHTML = ''; 
                 const curr = timi.value*60 ;
 
-                for (let i = curr+60; i <= curr + 360; i += 30) { 
+                for (let i = curr+60; i <= curr + 300; i += 30) { 
                     const hours = Math.floor(i / 60) ;
                     const mins = i % 60;
                     const text = `${hours}:${mins.toString().padStart(2, '0')}`;
