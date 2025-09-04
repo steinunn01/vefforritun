@@ -1,84 +1,39 @@
 <!DOCTYPE html>
 <html lang="is">
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1" >
-        <meta name="description" content="Listafnið heldur margar áhugaverðar
-        sýningar og stendur fyrir viðburðum.">
-        <meta property="og:title" content="Listasafnið" >
-        <meta property="og:description" content="Listafnið heldur margar áhugaverðar
-        sýningar og stendur fyrir viðburðum" >
-        <meta property="og:image" content="/myndir/sharing.jpg" >
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link
+        rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%2210 0 100 100%22><text y=%22.90em%22 font-size=%2290%22>🎨</text></svg>"
+        />
         <title>Listasafnið</title>
+        <!-- Vísa í CSS hér -->
+        <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-         <header>
-            <h1>Listasafnið</h1>
-        </header>
-        <a href="#main">Beint í efni</a>
-        <nav>
-            <menu>
-                <li><a href="index.html">Forsíða Listasafnsins</a></li>
-                <li><a href="sidur/um.html">Um Listafnið</a></li>
-                <li><a href="sidur/syningar.html">Sýningaryfirlitssíðu</a></li>
-                <li><a href="sidur/skraning.html">Skráning á sýningu</a></li>
-            </menu>
-        </nav>
-        <main id="main">
-            <article>
-                <h2>Velkomin á Listasafnið</h2>
-                <p>Komdu að skoða list!</p>
-                <p><a href="sidur/um.html"> Nánar um starfsemina </a></p>
-                <section>
-                    <small>Sýningar</small>
-                    <h2>Núverandi sýningar</h2>
-                    <p>Listasafnið stendur fyrir sýningum sem eru opnar almenningi.</p>
-                    <p> <img src="myndir/hus.jpg" width=300 alt="Mynd af húsi"></p>
-                    <p><a href="sidur/syningar.html">Nánar um sýningar</a></p>
-                </section>
-                <section>
-                    <small> Sýningar </small>
-                    <h2>Skráðu hópinn þinn á sýningu</h2>
-                    <p>Tökum við einstaklingum og hópum í leiðsögn.</p>
-                    <p> <img src="myndir/folk.jpg" width=300 alt="Mynd af fólki"></p>
-                    <p><a href="sidur/skraning.html">Skráðu þig</a></p>          
-                </section>
-            </article>
+        <div class="wrapper">
+            <p><a href="#efni">Beint í efni</a></p>
+
+            <nav>
+                <p><a href="">Forsíða</a>
+                <a href="">Um listasafnið</a>
+                <a href="">Sýningar</a>
+                <a href="">Skráning á sýningu</a></p>
+            </nav>
+
+            <!-- Hér skal setja „wrapper“ -->
+            <header class="intro">
+                <p>Efni í haus.</p>
+            </header>
+
+            <main id="efni">
+                <p>Efni forsíðu.</p>
+            </main>
+
             <footer>
-                <h2> Opnunartímar </h2>
-                <h3> Skrifstofur </h3>
-                <p> Mánudaga til föstudaga: 10:00-16:00 </p>
-                <p> Helgar: Lokað</p> 
-                <h3> Sýningarsalur </h3>
-                <p> Mánudagar: 13:00-16:00 </p>
-                <p> Þriðjudagur til föstudaga: 10:00-17:00  </p>
-                <p> Helgar: 13:00-17:00</p>                 
-                <h2> Hafðu samband </h2>
-                <ul>
-                    <li>Listasafnið, skrifstofur
-                        <ul>
-                            <li>Listagata 1</li>
-                            <li>101 Reykjavík</li>
-                            <li>Sími 234-2345</li>
-                            <li>hi@hi.is</li>
-                        </ul>
-                    </li>
-                    <li>Listasafnið, sýningarsalur
-                        <ul>
-                            <li>Listagata 10</li>
-                            <li>101 Reykjavík</li>
-                            <li>Sími 234-2345</li>
-                            <li>hi-syningarsalur@hi.is</li>
-                        </ul>
-                    </li>
-                    <li> Samfélagsmiðlar 
-                        <ul>
-                            <li><a href="https://www.facebook.com/haskolalist/">Facebook </a></li>
-                            <li><a href="https://x.com/haskolalist">X</a></li>
-                        </ul>
-                    </li>
-                </ul>
+                <p>Efni í fót.</p>
             </footer>
-        </main> 
-    </body> 
+        </div>
+    </body>
 </html>
