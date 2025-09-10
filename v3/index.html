@@ -3,37 +3,109 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link
-        rel="icon"
-        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%2210 0 100 100%22><text y=%22.90em%22 font-size=%2290%22>🎨</text></svg>"
-        />
-        <title>Listasafnið</title>
-        <!-- Vísa í CSS hér -->
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%2210 0 100 100%22><text y=%22.90em%22 font-size=%2290%22>🎨</text></svg>"/>
         <link rel="stylesheet" href="styles.css">
+        <title>Listasafnið</title>
     </head>
     <body>
+        <p class="sr-only"><a href="#efni">Beint í efni</a></p>
+
+        <nav>
+            <ul>
+                <li><u>Forsíða</u></li>
+                <li><a href="sidur/um.html">Um Listasafnið</a></li>
+                <li><a href="sidur/syningar.html">Sýningar</a></li>
+                <li><a href="sidur/skraning.html">Skráning á sýningu</a></li>
+            </ul>
+        </nav>
+
         <div class="wrapper">
-            <p><a href="#efni">Beint í efni</a></p>
-
-            <nav>
-                <p><a href="">Forsíða</a>
-                <a href="">Um listasafnið</a>
-                <a href="">Sýningar</a>
-                <a href="">Skráning á sýningu</a></p>
-            </nav>
-
-            <!-- Hér skal setja „wrapper“ -->
             <header class="intro">
-                <p>Efni í haus.</p>
+                <div class="protection">
+                    <div class="header-content">
+                        <h1>LISTASAFNIÐ</h1>
+                        <h2>Velkomin á Listasafnið</h2>
+                        <h>Komdu að skoða list!</p>
+                        <p><a href="sidur/um.html">Nánar um starfsemina.</a></p>
+                    </div>
+                </div>
             </header>
 
             <main id="efni">
-                <p>Efni forsíðu.</p>
+                <div class="card">
+                    <div class="kicker"> <p>Sýningar</p> </div>
+                    <h3>Núverandi sýningar</h3>
+                    <div class="card-content">
+                        <div class="card-mynd"> <img src="myndir/hus.jpg" width=300 alt="Mynd af húsi"></div>
+                        <div class="card-lysing"> Listasafnið stendur fyrir sýningum sem eru opnar almenningi.</div>
+                    </div>
+                    <p><a href="sidur/syningar.html">Nánar um sýningar.</a></p>
+                </div>
+                <div class="card">
+                    <div class="kicker"> <p> Skráning </p></div>
+                    <h3>Skráðu hópinn þinn á sýningu</h3>
+                    <div class="card-content">
+                        <div class="card-mynd"> <img src="myndir/folk.jpg" width=300 alt="Mynd af fólki"></div>
+                        <div class="card-lysing"> Tökum við einstaklingum og hópum í leiðsögn.</div>
+                    </div>
+                    <p><a href="sidur/skraning.html">Skráðu þig.</a></p>          
+                </div>
             </main>
-
-            <footer>
-                <p>Efni í fót.</p>
+            <footer class="footer">
+                <ul>
+                    <li> <div class="f2"> Opnunartímar</div> 
+                        <ul>
+                            <li> <div class="f3">Skrifstofur</div> 
+                                <ul>
+                                    <li> Mánudaga til föstudaga</li>
+                                    <li>10:00-16:00 </li>
+                                    <li> Helgar</li>
+                                    <li>Lokað</li> 
+                                </ul>
+                            </li>
+                            <li class="bil"></li>
+                            <li> <div class="f3"> Sýningarsalur </div> 
+                                <ul>
+                                    <li> Mánudagar</li>
+                                    <li>13:00-16:00 </li>
+                                    <li> Þriðjudagur til föstudaga</li>
+                                    <li>10:00-17:00  </li>
+                                    <li> Helgar</li>
+                                    <li>13:00-17:00</li> 
+                                </ul>
+                            </li>
+                        </ul>                
+                    </li>
+                    <li> <div class="f2"> Hafðu samband </div>
+                        <ul>
+                            <li>Listasafnið, skrifstofur
+                                <ul>
+                                    <li>Listagata 1</li>
+                                    <li>101 Reykjavík</li>
+                                    <li><u>Sími 234-2345</u></li>
+                                    <li><u>hi@hi.is</u></li>
+                                </ul>
+                            </li>
+                            <li class="bil"></li>
+                            <li>Listasafnið, sýningarsalur
+                                <ul>
+                                    <li>Listagata 10</li>
+                                    <li>101 Reykjavík</li>
+                                    <li><u>Sími 234-2345</u></li>
+                                    <li><u>hi-syningarsalur@hi.is</u></li>
+                                </ul>
+                            </li>
+                        </ul> 
+                    </li>
+                    <li> <div class="f2"> Samfélagsmiðlar </div> 
+                        <ul>
+                            <li><a href="https://www.facebook.com/haskolalist/">Facebook </a></li>
+                            <li><a href="https://x.com/haskolalist">X</a></li>
+                        </ul>
+                    </li>
+                </ul>
             </footer>
         </div>
     </body>
 </html>
+

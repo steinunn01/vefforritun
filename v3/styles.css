@@ -18,7 +18,7 @@ html {
 
 /* hjálpar class sem felur sjónrænt en skjálesarar lesa */
 .sr-only:not(:focus):not(:active) {
-  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
   clip-path: inset(50%);
   height: 1px;
   overflow: hidden;
@@ -40,6 +40,31 @@ html {
 /* Leturgerðir sem við sækjum úr fonts/ möppu */
 @font-face {
   /* TODO */
+    font-family: 'Gelasio';
+    font-style: normal;
+    font-weight: 400;
+    src: url('fonts/Gelasio/static/Gelasio-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Gelasio';
+  font-style: normal;
+  font-weight: 700;
+  src: url('fonts/Gelasio/static/Gelasio-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: normal;
+  font-weight: 700;
+  src: url('fonts/Atkinson_Hyperlegible/AtkinsonHyperlegible-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: normal;
+  font-weight: 900;
+  src: url('fonts/Atkinson_Hyperlegible/AtkinsonHyperlegible-Bold.ttf') format('truetype');
 }
 
 /*** Allt meginmál notar Gelasio ***/
@@ -55,9 +80,16 @@ h1,
 h2,
 h3,
 legend {
-  /* TODO */
+    font-family: 'Atkinson Hyperlegible';
+    letter-spacing:0.2rem;
+    font-size:48px;
+    margin-bottom:4rem;
 }
 
+h3 {
+    font-size:32px;
+    margin-bottom:1rem;
+}
 /** Lætur myndir aldrei taka meira pláss en foreldri skilgreinir **/
 img {
   max-width: 100%;
@@ -66,6 +98,14 @@ img {
 /** Litur á hlekkjum erfist frá foreldri **/
 a {
   color: inherit;
+}
+
+nav ul li a:active {
+    text-decoration:underline;
+}
+
+nav ul li a:hover {
+    text-decoration:underline;
 }
 
 /** Stærð á letri erfist frá foreldri í form element **/
@@ -87,16 +127,15 @@ select {
   flex-direction: column;
 
   /* pláss fyrir nav, það er nákvæmlega svona hátt */
-  margin-top: 4rem;
+ /* */
   width: 100%;
 
   /* Án þessa getum við lent í að síður með minna af efni séu ekki með bil fyrir neðan fót */
   min-height: 100vh;
-
-  background-color: #ffffff;
 }
 
 /* Allt auka pláss fer í main, ekki haus eða fót */
+
 .wrapper main {
   flex: 1;
 }
@@ -105,63 +144,263 @@ select {
  * Nav er fast efst og fylgir þegar við skrollum síðu.
  */
 nav {
-  /* TODO */
+    position:fixed;
+    top:0;
+    left:0;
+    height:4rem;
+    border-bottom: 1px solid #000;
+    width:100%;
+    padding:0 1rem;
+    overflow:hidden;
+    background-color:#FFFFFF;
+    z-index:4;
 }
 
 nav ul {
-  /* TODO */
+    list-style:none;
+    text-align:center;
+    margin-top:1rem;
 }
 
-/* TODO fleiri selectorar fyrir valmynd */
+nav ul li {
+    display: inline-block;
+    font-size:1.5rem;
+    margin-left:2rem;
+    font-family: 'Atkinson Hyperlegible';
+    font-size:1.5rem;
+}
+
+nav ul li a {
+    text-decoration:none;
+}
 
 /** Haus á síðum **/
 
 header {
+    text-align: center;
+    color:#FFFFFF;
     margin:0;
-    top:0;
     padding:10px;
-    font-size:20px;
     min-height:10vh;
 }
 
-/* TODO fleiri selectorar fyrir hausa */
+.header-content {
+    margin-top:20rem;
+    z-index:2;
+}
 
+.sidu-titill {
+    color:#000000;
+    text-transform: uppercase;
+    margin:0;
+    letter-spacing:0;
+    margin-top:4rem;
+}
+
+.um-h2 {
+    margin:0;
+    font-size:1.5rem;
+    letter-spacing:0;
+    padding-top:1rem;
+}
+
+.sh3 {
+    margin:0;
+    font-size:1.5rem;
+    letter-spacing:0;
+    padding:0;
+}
+
+.aaf {
+    padding-top:1rem;
+    padding-bottom:1rem;
+}
+
+.syningar-aaf {
+    padding-bottom:1rem;
+}
+
+.skraning-aaf {
+    padding:1rem;
+}
 /** Meginmál og efni forsíðu **/
 
 main {
-  /* TODO */
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 900px; 
+    margin-top:0;
+    margin-bottom:0;
 }
 
 /** Forsíða inngangsmynd **/
 
 .intro {
-  /* TODO */
+    background:url("myndir/background.jpg");    
+    background-size: cover;
+    background-position:center center;
+    background-repeat:no-repeat;
+    height:48rem;
+    background-attachment: fixed;
+    z-index:0;
 }
 
-/* TODO fleiri selectorar fyrir forsíðu inngangsmyndar */
+.protection {
+    background-color:rgba(0,0,0,0.3);
+    display:inline;
+    position:absolute;
+    top:4rem;
+    left:0;
+    height:44rem;
+    width:100%;
+    z-index:1;
+}
 
 /**
  * Cards á forsíðu.
  */
 
 .card {
-  /* TODO */
+    padding:2rem;
 }
 
-/* TODO fleiri selectorar fyrir cards */
+.card:nth-child(2n) .card-content{
+    display:flex;
+    flex-direction:row-reverse;
+}
+
+.card:nth-child(2n+1) .card-content{
+    display:flex;
+}
+
+.card-lysing {
+    margin-right: auto;
+}
+
+.card-mynd {
+    margin-right:1rem;
+}
+
+.kicker {
+    font-size:0.75rem;
+    text-transform: uppercase;
+    font-weight:700;
+}
 
 /** Efnissíða **/
 
-/* TODO */
-
 /** Töflur **/
+table {
+    margin-bottom:1rem;
+    text-align:left;
+    width:100%;
+    border-collapse:collapse;
+}
 
-/* TODO */
+table th {
+    padding:0.5rem;
+}
+
+table td {
+    padding:0.5rem;
+}
+
+table tbody tr:nth-child(odd) {
+    background-color:#FF9999;
+}
 
 /** Form **/
 
-/* TODO */
+.skraning {
+    max-width:450px;
+    margin-left: auto;
+    margin-right: auto;
+    display:inline;
+}
 
-/** Fótur **/
+select,input,textarea {
+    width:100%;
+}
 
-/* TODO */
+.tjekk {
+    width:auto;
+}
+
+fieldset {
+    border:0;
+    max-width:450px;
+    text-align:left;
+    margin:1rem;
+    width:100%;
+    display:inline;
+}
+
+form {
+    background-color:#FFFFFF;
+    margin-left:0.5rem;
+    margin-right:0.5rem;
+    border:1px solid black;
+}
+
+button {
+    background-color:#FF9999;
+    padding:0.5rem;
+}
+
+.form-content {
+    margin: 0.5rem;
+}
+
+legend {
+    margin:0.5rem;
+    font-size:1.5rem;
+}
+
+footer {
+    background-color:#FF9999;
+    width:100%;
+    padding:1rem;
+    text-align:center;
+    vertical-align:top;
+    justify-items:center;
+}
+    
+.footer {
+    text-align:center;
+}
+
+.f2 {
+    font-family: 'Atkinson Hyperlegible';
+    font-weight:700;
+    font-size:1.6rem;
+    padding-bottom:1rem;
+    padding-left:1rem;
+    padding-right:1rem;
+}  
+
+.f3 {
+    font-family: 'Atkinson Hyperlegible';
+    font-size:1.4rem;
+}
+
+.bil {
+    margin:1rem;
+}
+
+footer li{
+    text-align:center;
+    padding:0;
+}
+
+footer > ul {
+    display:flex;
+    text-align:center;
+    margin:0;
+    padding:0;
+}
+
+footer ul {
+    list-style:none;
+    text-align:center;
+}
+

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="is">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Skráðu þig eða hópinn þinn á sýningu hjá Listafninu.">
+        <meta property="og:title" content="Skráning á sýningu á Listasafninu">
+        <meta property="og:description" content=" Skráðu þig eða hópinn þinn á sýningu hjá Listafninu.">
+        <meta property="og:image" content="/myndir/sharing.jpg">
+        <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%2210 0 100 100%22><text y=%22.90em%22 font-size=%2290%22>🎨</text></svg>"
+        />
+        <link rel="stylesheet" href="../styles.css">
+        <title>Skráning á sýningu á Listasafninu</title>
+    </head>
+    <body>
+        <header>
+            <h1 class="sidu-titill">Sýningar</h1>
+        </header>
+        <p class="sr-only"><a href="#efni">Beint í efni</a></p>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Forsíða Listasafnsins</a></li>
+                <li><a href="um.html">Um Listasafnið</a></li>
+                <li><a href="syningar.html">Sýningar</a></li>
+                <li><a href="skraning.html"><u>Skráning á sýningu</u></a></li>            
+            </ul>
+        </nav>
+        <div class="wrapper">
+            <main id="main">
+                <form action="/skraning" method="post">
+                    <div class="skraning">
+                        <fieldset>
+                            <legend>Sýning</legend>
+                            <div class="form-content">
+                                <label for="syningaval"> Hvaða sýningu viljið þið skrá ykkur á?</label>
+                                <select name="syningaval" id="syningaval">
+                                    <optgroup label="Núverandi sýningar">
+                                        <option>Skuggar og speglar</option>
+                                        <option>Tómarýmið</option>
+                                        <option>Þokan kemur</option>
+                                        <option>Litir í lífinu</option>
+                                        <option>Form</option>
+                                    </optgroup>
+                                    <optgroup label="Næstu sýningar">
+                                        <option>Dansað á línu</option>
+                                        <option>Rýmið sem tími</option>
+                                        <option>öðruvísi</option>
+                                        <option>Flæði einksis</option>
+                                        <option>Ímyndaðu þér</option>
+                                        <option>Síðasti vefurinn</option>
+                                        <option>Tölvulist</option>
+                                        <option>abc</option>
+                                        <option>handan alls</option>
+                                        <option>Hljóðmyndir</option>
+                                        <option>Brenglun</option>
+                                        <option>Snert af engu</option>
+                                        <option>Víðerni í spegli</option>
+                                        <option>Fölsk birta</option>
+                                        <option>forritaður flótti</option>
+                                        <option>Rótleysi</option>
+                                        <option>Brot úr mynstri</option>
+                                        <option>Frostmál</option>
+                                        <option>nafnlaust</option>
+                                        <option>Fjarvera</option>
+                                    </optgroup>
+                                </select>
+                            </div> 
+                            <div class="form-content">
+                                <input name="allarsyningar" class="tjekk" type="checkbox" id="allarsyningar">
+                                <label for="allarsyningar">Allar sýningar sem í boði eru á völdum degi</label>
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Hópur</legend>
+                            <div class="form-content">
+                                <label for="fjoldi">Fjöldi í hóp</label>
+                                <input type="number" value="1" id="fjoldi" min ="1" max="12" required>
+                            </div>
+                            <div class="form-content">
+                                <label for="upplysingar">Upplýsingar um hóp</label>
+                                <textarea name="upplysingar" id="upplysingar" required></textarea>
+                            </div> 
+                            <div class="form-content">
+                                <label for="netfang">Netfang tengiliðar</label>
+                                <input type="email" id="netfang" pattern=".+@.+" required>
+                                <p> Verður að fylla út í. </p>
+                            </div> 
+                            <div class="form-content">
+                                <label for="simanumer">Símanúmer</label>
+                                <input type="tel" id="simanumer" placeholder="000-0000" pattern="[0-9]{3}-[0-9]{4}">
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Dagsetning og tími</legend>
+                            <div class="form-content">
+                                <label for="dagsetning">Hvenær viljið þið koma?</label>
+                                <input type="date" id="dagsetning">
+                            </div>
+                            <div class="form-content">
+                                <label for="timi">Klukkan hvað?</label>
+                                <select id="timi" name="timi" required>
+                                    <option value="">None</option>
+                                </select>
+                            </div>
+                            <div class="form-content">
+                                <label for="lengd">Hve lengi?</label>
+                                <select id="lengd" name="lengd" required>
+                                    <option value="">None</option>
+                                </select>
+                                <small>Mælt er með að taka tvær klukkustundir eða lengur fyrir sýningar í sal 1</small>
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Bóka</legend>
+                            <div class="form-content">
+                                <label>
+                                    <input class="tjekk" name="register" type="checkbox">
+                                    <a target="_blank" href="um.html"> Samþykkja skilmála </a>
+                                </label>
+                            </div>
+                            <div class="form-content">
+                                <label>
+                                    <button>Panta og greiða</button>
+                                </label>
+                            </div>
+                        </fieldset>
+                        <p class="skraning-aaf"><a href="../index.html"> Aftur á forsíðu</a></p>
+                    </div>
+                </form>
+            </main>
+        </div>
+        <footer class="footer">
+            <ul>
+                <li> <div class="f2"> Opnunartímar</div> 
+                    <ul>
+                        <li> <div class="f3">Skrifstofur</div> 
+                            <ul>
+                                <li> Mánudaga til föstudaga</li>
+                                <li>10:00-16:00 </li>
+                                <li> Helgar</li>
+                                <li>Lokað</li> 
+                            </ul>
+                        </li>
+                        <li class="bil"></li>
+                        <li> <div class="f3"> Sýningarsalur </div> 
+                            <ul>
+                                <li> Mánudagar</li>
+                                <li>13:00-16:00 </li>
+                                <li> Þriðjudagur til föstudaga</li>
+                                <li>10:00-17:00  </li>
+                                <li> Helgar</li>
+                                <li>13:00-17:00</li> 
+                            </ul>
+                        </li>
+                    </ul>                
+                </li>
+                <li> <div class="f2"> Hafðu samband </div>
+                    <ul>
+                        <li>Listasafnið, skrifstofur
+                            <ul>
+                                <li>Listagata 1</li>
+                                <li>101 Reykjavík</li>
+                                <li><u>Sími 234-2345</u></li>
+                                <li><u>hi@hi.is</u></li>
+                            </ul>
+                        </li>
+                        <li class="bil"></li>
+                        <li>Listasafnið, sýningarsalur
+                            <ul>
+                                <li>Listagata 10</li>
+                                <li>101 Reykjavík</li>
+                                <li><u>Sími 234-2345</u></li>
+                                <li><u>hi-syningarsalur@hi.is</u></li>
+                            </ul>
+                        </li>
+                    </ul> 
+                </li>
+                <li> <div class="f2"> Samfélagsmiðlar </div> 
+                    <ul>
+                        <li><a href="https://www.facebook.com/haskolalist/">Facebook </a></li>
+                        <li><a href="https://x.com/haskolalist">X</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </footer>
+        <script>
+            const timi = document.getElementById('timi');
+            const lengd = document.getElementById('lengd');
+            function veljatima() {
+                timi.innerHTML = ''; 
+                for (let i = 600; i <= 1020; i += 30) { 
+                    const hours = Math.floor(i / 60);
+                    const mins = i % 60;
+                    const text = `${hours}:${mins.toString().padStart(2, '0')}`;
+                    const option = document.createElement('option');
+                    if (mins==30) {
+                        option.value = hours + 0.5;
+                    } else {
+                        option.value = hours; 
+                    }
+                    option.textContent = text;
+                    timi.appendChild(option);
+                }
+            }
+
+            function veljalengd() {
+                lengd.innerHTML = ''; 
+                const curr = timi.value*60 ;
+
+                for (let i = curr+60; i <= curr + 300; i += 30) { 
+                    const hours = Math.floor(i / 60) ;
+                    const mins = i % 60;
+                    const text = `${hours}:${mins.toString().padStart(2, '0')}`;
+                    const option = document.createElement('option');
+
+                    if (mins==30) {
+                        option.value = hours + 0.5;
+                    } else {
+                        option.value = hours; 
+                    }  
+
+                    option.textContent = text;
+                    lengd.appendChild(option);
+                }
+            }
+
+            veljatima();
+            veljalengd();
+            timi.addEventListener('change', veljalengd);
+        </script>
+    </body>
+</html>
