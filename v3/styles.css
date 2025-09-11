@@ -331,7 +331,9 @@ table tbody tr:nth-child(odd) {
 }
 
 select,input,textarea {
-    width:100%;
+     background-color:#FFFFFF;
+    border:1px solid black;
+   width:100%;
 }
 
 .tjekk {
@@ -345,13 +347,6 @@ fieldset {
     max-width:450px;
     width:100%;
     display:inline;
-}
-
-form {
-    background-color:#FFFFFF;
-    margin-left:0.5rem;
-    margin-right:0.5rem;
-    border:1px solid black;
 }
 
 button {

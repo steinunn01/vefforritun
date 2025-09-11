@@ -28,106 +28,104 @@
         </nav>
         <div class="wrapper">
             <main id="main">
-                <form action="/skraning" method="post">
-                    <div class="skraning">
-                        <fieldset>
-                            <legend>Sýning</legend>
-                            <div class="form-content">
-                                <label for="syningaval"> Hvaða sýningu viljið þið skrá ykkur á?</label>
-                                <select name="syningaval" id="syningaval">
-                                    <optgroup label="Núverandi sýningar">
-                                        <option>Skuggar og speglar</option>
-                                        <option>Tómarýmið</option>
-                                        <option>Þokan kemur</option>
-                                        <option>Litir í lífinu</option>
-                                        <option>Form</option>
-                                    </optgroup>
-                                    <optgroup label="Næstu sýningar">
-                                        <option>Dansað á línu</option>
-                                        <option>Rýmið sem tími</option>
-                                        <option>öðruvísi</option>
-                                        <option>Flæði einksis</option>
-                                        <option>Ímyndaðu þér</option>
-                                        <option>Síðasti vefurinn</option>
-                                        <option>Tölvulist</option>
-                                        <option>abc</option>
-                                        <option>handan alls</option>
-                                        <option>Hljóðmyndir</option>
-                                        <option>Brenglun</option>
-                                        <option>Snert af engu</option>
-                                        <option>Víðerni í spegli</option>
-                                        <option>Fölsk birta</option>
-                                        <option>forritaður flótti</option>
-                                        <option>Rótleysi</option>
-                                        <option>Brot úr mynstri</option>
-                                        <option>Frostmál</option>
-                                        <option>nafnlaust</option>
-                                        <option>Fjarvera</option>
-                                    </optgroup>
-                                </select>
-                            </div> 
-                            <div class="form-content">
-                                <input name="allarsyningar" class="tjekk" type="checkbox" id="allarsyningar">
-                                <label for="allarsyningar">Allar sýningar sem í boði eru á völdum degi</label>
-                            </div>
-                        </fieldset>
-                        <fieldset>
-                            <legend>Hópur</legend>
-                            <div class="form-content">
-                                <label for="fjoldi">Fjöldi í hóp</label>
-                                <input type="number" value="1" id="fjoldi" min ="1" max="12" required>
-                            </div>
-                            <div class="form-content">
-                                <label for="upplysingar">Upplýsingar um hóp</label>
-                                <textarea name="upplysingar" id="upplysingar" rows="4" required></textarea>
-                            </div> 
-                            <div class="form-content">
-                                <label for="netfang">Netfang tengiliðar</label>
-                                <input type="email" id="netfang" pattern=".+@.+" required>
-                                <p> Verður að fylla út í. </p>
-                            </div> 
-                            <div class="form-content">
-                                <label for="simanumer">Símanúmer</label>
-                                <input type="tel" id="simanumer" placeholder="000-0000" pattern="[0-9]{3}-[0-9]{4}">
-                            </div>
-                        </fieldset>
-                        <fieldset>
-                            <legend>Dagsetning og tími</legend>
-                            <div class="form-content">
-                                <label for="dagsetning">Hvenær viljið þið koma?</label>
-                                <input type="date" id="dagsetning">
-                            </div>
-                            <div class="form-content">
-                                <label for="timi">Klukkan hvað?</label>
-                                <select id="timi" name="timi" required>
-                                    <option value="">None</option>
-                                </select>
-                            </div>
-                            <div class="form-content">
-                                <label for="lengd">Hve lengi?</label>
-                                <select id="lengd" name="lengd" required>
-                                    <option value="">None</option>
-                                </select>
-                                <small>Mælt er með að taka tvær klukkustundir eða lengur fyrir sýningar í sal 1</small>
-                            </div>
-                        </fieldset>
-                        <fieldset>
-                            <legend>Bóka</legend>
-                            <div class="form-content">
-                                <label>
-                                    <input class="tjekk" name="register" type="checkbox">
-                                    <a target="_blank" href="um.html"> Samþykkja skilmála </a>
-                                </label>
-                            </div>
-                            <div class="form-content">
-                                <label>
-                                    <button>Panta og greiða</button>
-                                </label>
-                            </div>
-                        </fieldset>
-                        <p class="skraning-aaf"><a href="../index.html"> Aftur á forsíðu</a></p>
-                    </div>
-                </form>
+                <div class="skraning">
+                    <fieldset>
+                        <legend>Sýning</legend>
+                        <div class="form-content">
+                            <label for="syningaval"> Hvaða sýningu viljið þið skrá ykkur á?</label>
+                            <select name="syningaval" id="syningaval">
+                                <optgroup label="Núverandi sýningar">
+                                    <option>Skuggar og speglar</option>
+                                    <option>Tómarýmið</option>
+                                    <option>Þokan kemur</option>
+                                    <option>Litir í lífinu</option>
+                                    <option>Form</option>
+                                </optgroup>
+                                <optgroup label="Næstu sýningar">
+                                    <option>Dansað á línu</option>
+                                    <option>Rýmið sem tími</option>
+                                    <option>öðruvísi</option>
+                                    <option>Flæði einksis</option>
+                                    <option>Ímyndaðu þér</option>
+                                    <option>Síðasti vefurinn</option>
+                                    <option>Tölvulist</option>
+                                    <option>abc</option>
+                                    <option>handan alls</option>
+                                    <option>Hljóðmyndir</option>
+                                    <option>Brenglun</option>
+                                    <option>Snert af engu</option>
+                                    <option>Víðerni í spegli</option>
+                                    <option>Fölsk birta</option>
+                                    <option>forritaður flótti</option>
+                                    <option>Rótleysi</option>
+                                    <option>Brot úr mynstri</option>
+                                    <option>Frostmál</option>
+                                    <option>nafnlaust</option>
+                                    <option>Fjarvera</option>
+                                </optgroup>
+                            </select>
+                        </div> 
+                        <div class="form-content">
+                            <input name="allarsyningar" class="tjekk" type="checkbox" id="allarsyningar">
+                            <label for="allarsyningar">Allar sýningar sem í boði eru á völdum degi</label>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Hópur</legend>
+                        <div class="form-content">
+                            <label for="fjoldi">Fjöldi í hóp</label>
+                            <input type="number" value="1" id="fjoldi" min ="1" max="12" required>
+                        </div>
+                        <div class="form-content">
+                            <label for="upplysingar">Upplýsingar um hóp</label>
+                            <textarea name="upplysingar" id="upplysingar" rows="4" required></textarea>
+                        </div> 
+                        <div class="form-content">
+                            <label for="netfang">Netfang tengiliðar</label>
+                            <input type="email" id="netfang" pattern=".+@.+" required>
+                            <p> Verður að fylla út í. </p>
+                        </div> 
+                        <div class="form-content">
+                            <label for="simanumer">Símanúmer</label>
+                            <input type="tel" id="simanumer" placeholder="000-0000" pattern="[0-9]{3}-[0-9]{4}">
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Dagsetning og tími</legend>
+                        <div class="form-content">
+                            <label for="dagsetning">Hvenær viljið þið koma?</label>
+                            <input type="date" id="dagsetning">
+                        </div>
+                        <div class="form-content">
+                            <label for="timi">Klukkan hvað?</label>
+                            <select id="timi" name="timi" required>
+                                <option value="">None</option>
+                            </select>
+                        </div>
+                        <div class="form-content">
+                            <label for="lengd">Hve lengi?</label>
+                            <select id="lengd" name="lengd" required>
+                                <option value="">None</option>
+                            </select>
+                            <small>Mælt er með að taka tvær klukkustundir eða lengur fyrir sýningar í sal 1</small>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Bóka</legend>
+                        <div class="form-content">
+                            <label>
+                                <input class="tjekk" name="register" type="checkbox">
+                                <a target="_blank" href="um.html"> Samþykkja skilmála </a>
+                            </label>
+                        </div>
+                        <div class="form-content">
+                            <label>
+                                <button>Panta og greiða</button>
+                            </label>
+                        </div>
+                    </fieldset>
+                    <p class="skraning-aaf"><a href="../index.html"> Aftur á forsíðu</a></p>
+                </div>
             </main>
         </div>
         <footer>
