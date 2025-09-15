@@ -28,8 +28,8 @@
         </nav>
         <div class="wrapper">
             <main id="main">
-                <form action="/skraning" method="post">
-                    <div class="skraning">
+                <div class="skraning">
+                    <div class="skraning-hopur1">
                         <fieldset>
                             <legend>Sýning</legend>
                             <div class="form-content">
@@ -91,43 +91,51 @@
                                 <input type="tel" id="simanumer" placeholder="000-0000" pattern="[0-9]{3}-[0-9]{4}">
                             </div>
                         </fieldset>
-                        <fieldset>
-                            <legend>Dagsetning og tími</legend>
-                            <div class="form-content">
-                                <label for="dagsetning">Hvenær viljið þið koma?</label>
-                                <input type="date" id="dagsetning">
-                            </div>
-                            <div class="form-content">
-                                <label for="timi">Klukkan hvað?</label>
-                                <select id="timi" name="timi" required>
-                                    <option value="">None</option>
-                                </select>
-                            </div>
-                            <div class="form-content">
-                                <label for="lengd">Hve lengi?</label>
-                                <select id="lengd" name="lengd" required>
-                                    <option value="">None</option>
-                                </select>
-                                <small>Mælt er með að taka tvær klukkustundir eða lengur fyrir sýningar í sal 1</small>
-                            </div>
-                        </fieldset>
-                        <fieldset>
-                            <legend>Bóka</legend>
-                            <div class="form-content">
-                                <label>
-                                    <input class="tjekk" name="register" type="checkbox">
-                                    <a target="_blank" href="um.html"> Samþykkja skilmála </a>
-                                </label>
-                            </div>
-                            <div class="form-content">
-                                <label>
-                                    <button>Panta og greiða</button>
-                                </label>
-                            </div>
-                        </fieldset>
-                        <p class="skraning-aaf"><a href="../index.html"> Aftur á forsíðu</a></p>
                     </div>
-                </form>
+                    <div class="skraning-hopur1">
+                        <div class="skraning-hopur2">
+                            <fieldset>
+                                <legend>Dagsetning og tími</legend>
+                                <div class="form-content">
+                                    <label for="dagsetning">Hvenær viljið þið koma?</label>
+                                    <input type="date" id="dagsetning">
+                                </div>
+                                <div class="form-content">
+                                    <label for="timi">Klukkan hvað?</label>
+                                    <select id="timi" name="timi" required>
+                                        <option value="">None</option>
+                                    </select>
+                                </div>
+                                <div class="form-content">
+                                    <label for="lengd">Hve lengi?</label>
+                                    <select id="lengd" name="lengd" required>
+                                        <option value="">None</option>
+                                    </select>
+                                    <small>Mælt er með að taka tvær klukkustundir eða lengur fyrir sýningar í sal 1</small>
+                                </div>
+                            </fieldset>
+                            <fieldset>
+                                <legend>Bóka</legend>
+                                <div class="form-content">
+                                    <label>
+                                        <input class="tjekk" name="register" type="checkbox">
+                                        <a target="_blank" href="um.html"> Samþykkja skilmála </a>
+                                    </label>
+                                </div>
+                                <div class="form-content">
+                                    <label>
+                                        <button>Panta og greiða</button>
+                                    </label>
+                                </div>
+                            </fieldset>
+                            <p class="skraning-aaf"><a href="../index.html"> Aftur á forsíðu</a></p>
+                        </div>
+                        <fieldset>
+                            <div class="form-content">
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
             </main>
         </div>
         <footer class="footer">

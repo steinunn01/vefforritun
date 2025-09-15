@@ -212,8 +212,15 @@ header {
 }
 
 .header-content {
-    margin-top:20rem;
     z-index:2;
+    height:44rem;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.header-content h1 {
+    margin-top:-4rem;
 }
 
 .sidu-titill {
@@ -255,7 +262,8 @@ header {
 main {
     margin-left: auto;
     margin-right: auto;
-    max-width: 900px; 
+    max-width: 1100px; 
+    width:100%;
     margin-top:0;
     margin-bottom:0;
 }
@@ -274,7 +282,8 @@ main {
 
 .protection {
     background-color:rgba(0,0,0,0.3);
-    display:inline;
+    display:flex;
+    justify-content:center;
     position:absolute;
     top:4rem;
     left:0;
@@ -297,9 +306,14 @@ main {
     flex-direction:row-reverse;
 }
 
-
 .card-lysing {
     margin-right: auto;
+    flex:1;
+}
+
+.hnappur {
+    display:flex;
+    justify-content:flex-start;
 }
 
 .card-content {
@@ -308,15 +322,21 @@ main {
     flex-direction:column;
 }
 
-.card-mynd {
+.card-fylling {
     margin-right:1rem;
+}
+.card-mynd{
     width:40%;
+    border-radius:5px;
 }
 
 .card-mynd img {
     border-radius:5px;
-    height:12.5rem;
-    width:16.875rem;
+    height:18.75rem;
+    width:25.3125rem;
+    object-fit: cover;       
+    object-position: center center;
+    display:flex;
 }
 
 .kicker {
@@ -350,14 +370,16 @@ table tbody tr:nth-child(odd) {
 /** Form **/
 
 .skraning {
-    max-width:450px;
     margin-left: auto;
     margin-right: auto;
-    display:inline;
+    display:flex;
+    flex-direction:column;
 }
 
 select,input,textarea {
     width:100%;
+    background-color:#FFFFFF;
+    border:1px solid black;
 }
 
 .tjekk {
@@ -366,21 +388,38 @@ select,input,textarea {
 
 fieldset {
     border:0;
-    max-width:450px;
     text-align:left;
-    margin:1rem;
+    max-width:450px;
+    margin:0.5rem;
     width:100%;
-    display:inline;
+    display:flex;
+    flex-direction:column;
+    max-width:450px;
 }
 
-form {
-    background-color:#FFFFFF;
-    margin-left:0.5rem;
-    margin-right:0.5rem;
-    border:1px solid black;
+.skraning-hopur1 {
+    display:flex;
+    justify-content:center;
+}
+
+.skraning-hopur2 {  
+    display:flex;
+    flex-direction:column;
 }
 
 button {
+    width:fit-content;
+    background-color:#000000;
+    padding-top:0.5rem;
+    padding-bottom:0.5rem;
+    padding-left:1rem;
+    padding-right:1rem;
+    border-radius:5px;
+    font-size:1rem;
+    color:#ffffff;
+}
+
+.button {
     width:fit-content;
     background-color:#000000;
     padding-top:0.5rem;
