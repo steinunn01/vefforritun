@@ -63,7 +63,6 @@ html {
 
   /* dark mode accent og protection */
   --color-accent-dark: #660000
-  --color-protection-dark: rgba(0, 0, 0, 0.35);
 
   /* Letur stillingar */
   --font-base-size: 1rem;
@@ -500,6 +499,13 @@ nav ul li a::after {
 }
 
 @media (prefers-color-scheme: dark) {
+
+h1,
+h2,
+h3,
+legend {
+        color: var(--color-background-primary);
+}
     footer, footer>* {
         background-color: #660000;
         color: var(--color-background-primary);
