@@ -1,0 +1,559 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/* hjálpar class sem felur sjónrænt en skjálesarar lesa */
+.sr-only:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+/** Stillingar **/
+
+:root {
+  --font-size-base: 16px;
+  --font-size-headings: 1.5rem;
+
+  /* Grunn bilið okkar er 1rem == 16px */
+  --spacing: 1rem;
+
+  /* Hámarks og lágmarks breidd á efni */
+  --max-width: 1100px;
+
+  /* Hæð á nav */
+  --height-nav: 4rem;
+
+  /* Grind */
+  --columns: 12;
+  --gutter: 30px;
+  --offset: 20px;
+
+  /* Breidd á efni með offset */
+  --width-offset: calc(100% - (2 * var(--offset)));
+
+  /* Bil á milli „stærri“ eininga (header, efnisbox, footer) */
+  --vertical-space-small: calc(var(--gutter) * 1);
+  --vertical-space-large: calc(var(--gutter) * 1.5);
+
+  --vertical-space: var(--vertical-space-small);
+
+  /* Border breiddir */
+  --border-nav: 2px solid var(--color-background-secondary);
+  --border-radius-regular: 5px;
+
+  /* Litir */
+  --color-background-primary: #ffffff;
+  --color-background-secondary: #000000;
+  --color-accent: #ff9999;
+  --color-protection: rgba(0, 0, 0, 0.35);
+
+  /* Letur stillingar */
+  --font-base-size: 1rem;
+  --font-family-base: "Gelasio", "Georgia", serif;
+  --font-family-heading: "Atkinson Hyperlegible", "Courier New", monospace;
+}
+
+@media (min-width: 700px) {
+  :root {
+    --vertical-space: var(--vertical-space-large);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background-primary: #000000;
+    --color-background-secondary: #ffffff;
+    --color-accent: #660000;
+    --color-protection: rgba(255, 255, 255, 0.5);
+  }
+}
+
+/** Letur og stærðir **/
+
+html {
+  font-size: var(--font-size-base);
+  color: var(--color-background-secondary);
+}
+
+@font-face {
+  font-family: "Atkinson Hyperlegible";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./fonts/AtkinsonHyperlegibleMono-VariableFont_wght.ttf")
+    format("woff2");
+}
+
+@font-face {
+  font-family: "Gelasio";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./fonts/Gelasio-VariableFont_wght.ttf") format("woff2");
+}
+
+@font-face {
+  font-family: "Gelasio";
+  font-weight: 700;
+  src: url("./fonts/Gelasio-VariableFont_wght.ttf") format("woff2");
+}
+
+html,
+input,
+select,
+button {
+  font-family: var(--font-family-base);
+}
+
+h1,
+h2,
+h3,
+legend {
+  font-family: var(--font-family-heading);
+}
+
+/** Lætur myndir aldrei taka meira pláss en foreldri skilgreinir **/
+img {
+  max-width: 100%;
+}
+
+/** Litur á hlekkjum erfist frá foreldri **/
+a {
+  color: inherit;
+}
+
+/** Stærð á letri erfist frá foreldri í form element **/
+input,
+button,
+select {
+  font-size: inherit;
+}
+
+/** Almennt takka útlit, getur virkað á bæði <a> og <button> **/
+.button {
+  display: inline-block;
+  padding: calc(var(--spacing) * 0.5) var(--spacing);
+  border: 0;
+  border-radius: var(--border-radius-regular);
+
+  color: var(--color-background-primary);
+  background-color: var(--color-background-secondary);
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+/**
+ * Eftirfarandi setur upp grunn umbrot (layout) síðu með flexbox.
+ * Við förum yfir flexbox í viku 4 + verkefni 4 en þangað til er hægt að nota þetta
+ * sem grunn og án breytinga.
+ * Athugið að til þess að þetta virki þar að setja <div class="wrapper"> utan um allt efni 
+ * innan <body> sem á að fylgja þessu (<nav> ætti að vera undanskilið).
+ */
+.wrapper {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 100%;
+  gap: var(--vertical-space);
+
+  /* grid items eru miðjuð */
+  justify-items: center;
+
+  /* pláss fyrir nav, það er nákvæmlega svona hátt */
+  margin-top: var(--height-nav);
+  width: 100%;
+  min-height: 100vh;
+
+  background-color: var(--color-background-primary);
+}
+
+.wrapper main {
+  flex: 1;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+
+  width: 100vw;
+  height: var(--height-nav);
+  overflow: hidden;
+
+  background-color: var(--color-background-primary);
+  border-bottom: var(--border-nav);
+}
+
+nav ul {
+  display: flex;
+  gap: calc(var(--spacing) * 2);
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+  padding: var(--spacing);
+
+  overflow: hidden;
+  list-style: none;
+}
+
+nav ul li {
+  white-space: nowrap;
+
+  font-family: var(--font-family-heading);
+}
+
+nav a {
+  text-decoration: none;
+}
+
+nav a:hover,
+nav a:focus {
+  text-decoration: underline;
+}
+
+nav strong {
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+nav .hide-in-mobile {
+  display: none;
+}
+
+@media (min-width: 500px) {
+  nav ul li {
+    font-size: var(--font-size-headings);
+  }
+}
+
+@media (min-width: 900px) {
+  nav ul li {
+    font-size: var(--font-size-headings);
+  }
+
+  nav .hide-in-mobile {
+    display: inline;
+  }
+}
+
+/** Haus á síðum **/
+
+header {
+  margin-top: var(--vertical-space);
+  text-align: center;
+}
+
+header h1 {
+  font-size: calc(var(--font-size-headings) * 2);
+  text-transform: uppercase;
+}
+
+/** Meginmál og efni forsíðu **/
+
+main {
+  /* Notum grid hér til að setja upp bil á milli header, meginmáls og fóts */
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 100%;
+
+  /* grid items eru miðjuð */
+  justify-items: center;
+
+  gap: var(--spacing);
+
+  width: var(--width-offset);
+  max-width: var(--max-width);
+}
+
+main > section {
+  width: 100%;
+}
+
+/** Forsíða inngangsmynd **/
+
+.intro {
+  display: flex;
+  position: relative;
+
+  margin-top: 0;
+  width: 100%;
+  min-height: calc(100vh - var(--height-nav));
+
+  color: var(--color-background-primary);
+
+  background-position: 50% 50%;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(./myndir/background.jpg);
+}
+
+.intro .protection {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+
+  background-color: var(--color-protection);
+}
+
+.intro .content {
+  position: relative;
+  z-index: 2;
+
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 2em;
+}
+
+.intro .content h1 {
+  margin-top: calc(var(--spacing) * -4);
+}
+
+.intro .content h1,
+.intro .content h2 {
+  margin-bottom: calc(var(--spacing) * 4);
+}
+
+/**
+ * Cards á forsíðu.
+ * Líta hræðilega út og erfitt að stýra með float! Lögum í verkefni 4 með því að nota flexbox.
+ */
+
+.cards {
+  display: grid;
+  grid-template-rows: auto;
+  gap: calc(var(--spacing) * 2);
+  justify-items: center;
+
+  width: 100%;
+}
+
+.card {
+  display: grid;
+  gap: var(--spacing);
+  width: 100%;
+}
+
+.card .card__header {
+  width: 100%;
+}
+
+.card .card__content {
+  flex: 1;
+
+  display: flex;
+  gap: var(--spacing);
+  flex-direction: column;
+}
+
+.card .card__text {
+  flex: 1;
+}
+
+.card .card__image {
+  order: -1;
+
+  width: 100%;
+}
+
+.card .card__kicker {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.card .card__title {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.card .card__image img {
+  display: block;
+
+  border-top-left-radius: var(--border-radius-regular);
+  border-top-right-radius: var(--border-radius-regular);
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+@media (min-width: 550px) {
+  .card {
+    grid-template-columns: repeat(calc(var(--columns)), 1fr);
+    grid-template-rows: auto;
+    gap: var(--gutter);
+  }
+
+  .card .card__content {
+    grid-column: span 7;
+  }
+
+  .card .card__image {
+    grid-column: span 5;
+    order: initial;
+  }
+
+  .card:nth-child(2n) .card__image {
+    order: -1;
+  }
+}
+
+/** Efnissíða **/
+
+.content section {
+  margin-bottom: var(--spacing);
+}
+
+/** Töflur **/
+
+/* Leyfir skroll á töflu ef pláss er ekki nóg til að birta hana alla lárétt */
+.table-wrapper {
+  overflow-x: auto;
+}
+
+table {
+  margin-bottom: var(--spacing);
+  border-spacing: 0;
+  width: 100%;
+}
+
+table th,
+table td {
+  padding: calc(var(--spacing) / 2);
+  text-align: left;
+}
+
+table tbody tr:nth-child(2n + 1) {
+  background-color: var(--color-accent);
+}
+
+/** Form **/
+
+form {
+  display: grid;
+  grid-template-columns: repeat(var(--columns), 1fr);
+  grid-template-rows: auto;
+  gap: var(--gutter);
+
+  width: 100%;
+}
+
+fieldset {
+  border: 0;
+  grid-column: span 12;
+}
+
+fieldset legend {
+  margin-bottom: var(--spacing);
+  font-size: 1.5rem;
+}
+
+fieldset div {
+  width: 100%;
+  margin-bottom: var(--spacing);
+}
+
+fieldset div label {
+  display: block;
+}
+
+fieldset div span {
+  display: block;
+  margin-top: calc(var(--spacing) / 2);
+}
+
+fieldset input,
+fieldset select,
+fieldset textarea {
+  padding: calc(var(--spacing) / 2);
+  width: 100%;
+  border: 1px solid #000000;
+
+  background-color: #ffffff;
+}
+
+fieldset input[type="checkbox"] {
+  display: inline-block;
+  margin-right: calc(var(--spacing) / 2);
+  width: auto;
+}
+
+@media (min-width: 700px) {
+  fieldset {
+    grid-column: span 6;
+    border: 0;
+  }
+
+  .submit {
+    grid-column: span 12;
+  }
+}
+
+/** Fótur **/
+
+footer {
+  display: grid;
+  justify-items: center;
+
+  padding-top: var(--spacing);
+  padding-bottom: var(--spacing);
+  width: 100%;
+
+  background-color: var(--color-accent);
+}
+
+footer > .content {
+  display: grid;
+  justify-content: center;
+  gap: var(--gutter);
+
+  width: 100%;
+}
+
+footer .footer-section {
+  text-align: center;
+}
+
+@media (min-width: 700px) {
+  footer > .content {
+    grid-template-columns: repeat(var(--columns), 1fr);
+    grid-template-rows: auto;
+
+    width: var(--width-offset);
+    max-width: var(--max-width);
+  }
+
+  footer .content > .footer-section {
+    grid-column: span 4;
+  }
+}
+
+footer ul {
+  list-style: none;
+}
+
+footer ul,
+footer section,
+footer h2 {
+  margin-bottom: var(--spacing);
+}
