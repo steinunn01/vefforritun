@@ -1,0 +1,85 @@
+/**
+ * Cards á forsíðu.
+ * Líta hræðilega út og erfitt að stýra með float! Lögum í verkefni 4 með því að nota flexbox.
+ */
+
+.cards {
+  display: grid;
+  grid-template-rows: auto;
+  gap: calc(var(--spacing) * 2);
+  justify-items: center;
+
+  width: 100%;
+}
+
+.card {
+  display: grid;
+  gap: var(--spacing);
+  width: 100%;
+}
+
+.card .card__header {
+  width: 100%;
+}
+
+.card .card__content {
+  flex: 1;
+
+  display: flex;
+  gap: var(--spacing);
+  flex-direction: column;
+}
+
+.card .card__text {
+  flex: 1;
+}
+
+.card .card__image {
+  order: -1;
+
+  width: 100%;
+}
+
+.card .card__kicker {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.card .card__title {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.card .card__image img {
+  display: block;
+
+  border-top-left-radius: var(--border-radius-regular);
+  border-top-right-radius: var(--border-radius-regular);
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+@media (min-width: 550px) {
+  .card {
+    grid-template-columns: repeat(calc(var(--columns)), 1fr);
+    grid-template-rows: auto;
+    gap: var(--gutter);
+  }
+
+  .card .card__content {
+    grid-column: span 7;
+  }
+
+  .card .card__image {
+    grid-column: span 5;
+    order: initial;
+  }
+
+  .card:nth-child(2n) .card__image {
+    order: -1;
+  }
+}
+

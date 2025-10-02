@@ -1,0 +1,22 @@
+{
+  "name": "v6",
+  "version": "1.0.0",
+  "description": "Sýnilausn á [verkefni 5](https://github.com/vefforritun/vef1-2025-v5).",
+  "source": "./index.html",
+  "scripts": {
+    "start": "parcel",
+    "dev": "parcel index.html 'sidur/*.html' --lazy --no-cache",
+    "build": "parcel build",
+    "lint": "stylelint styles.scss"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.16.0",
+    "parcel": "^2.16.0",
+    "stylelint": "^16.24.0",
+    "stylelint-config-recess-order": "^7.3.0",
+    "stylelint-config-standard": "^39.0.0",
+    "stylelint-config-standard-scss": "^16.0.0"
+  }
+}

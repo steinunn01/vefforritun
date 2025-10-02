@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/** Letur og stærðir **/
+html {
+  box-sizing: border-box;
+}
+
+*,
+,:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/** Lætur myndir aldrei taka meira pláss en foreldri skilgreinir **/
+img {
+  max-width: 100%;
+}
+
+/** Stærð á letri erfist frá foreldri í form element **/
+input,
+button,
+select {
+  font-size: inherit;
+}
+

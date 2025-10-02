@@ -1,0 +1,48 @@
+/** Fótur **/
+
+footer {
+  display: grid;
+  justify-items: center;
+
+  padding-top: var(--spacing);
+  padding-bottom: var(--spacing);
+  width: 100%;
+
+  background-color: var(--color-accent);
+}
+
+footer > .content {
+  display: grid;
+  justify-content: center;
+  gap: var(--gutter);
+
+  width: 100%;
+}
+
+footer .footer-section {
+  text-align: center;
+}
+
+@media (min-width: 700px) {
+  footer > .content {
+    grid-template-columns: repeat(var(--columns), 1fr);
+    grid-template-rows: auto;
+
+    width: var(--width-offset);
+    max-width: var(--max-width);
+  }
+
+  footer .content > .footer-section {
+    grid-column: span 4;
+  }
+}
+
+footer ul {
+  list-style: none;
+}
+
+footer ul,
+footer section,
+footer h2 {
+  margin-bottom: var(--spacing);
+}

@@ -1,0 +1,61 @@
+/** Form **/
+
+form {
+  display: grid;
+  grid-template-columns: repeat(var(--columns), 1fr);
+  grid-template-rows: auto;
+  gap: var(--gutter);
+
+  width: 100%;
+}
+
+fieldset {
+  border: 0;
+  grid-column: span 12;
+}
+
+fieldset legend {
+  margin-bottom: var(--spacing);
+  font-size: 1.5rem;
+}
+
+fieldset div {
+  width: 100%;
+  margin-bottom: var(--spacing);
+}
+
+fieldset div label {
+  display: block;
+}
+
+fieldset div span {
+  display: block;
+  margin-top: calc(var(--spacing) / 2);
+}
+
+fieldset input,
+fieldset select,
+fieldset textarea {
+  padding: calc(var(--spacing) / 2);
+  width: 100%;
+  border: 1px solid #000000;
+
+  background-color: #ffffff;
+}
+
+fieldset input[type="checkbox"] {
+  display: inline-block;
+  margin-right: calc(var(--spacing) / 2);
+  width: auto;
+}
+
+@media (min-width: 700px) {
+  fieldset {
+    grid-column: span 6;
+    border: 0;
+  }
+
+  .submit {
+    grid-column: span 12;
+  }
+}

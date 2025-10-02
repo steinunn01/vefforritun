@@ -3,7 +3,18 @@
  * Sjá skjölun í hverri skrá fyrir sig.
  */
 @use "styles/config";
-
-// TODO bæta við fleiri skrám eftir þörfum
-
+@use "styles/reset";
+@use "styles/base";
 @use "styles/grid";
+@use "styles/utils";
+@use "styles/components/card";
+@use "styles/components/table";
+@use "styles/components/form";
+@use "styles/components/button";
+@use "styles/components/intro";
+@use "styles/components/footer";
+@use "styles/components/header";
+@use "styles/components/content";
+@use "styles/components/main";
+@use "styles/components/nav";
+@use "styles/components/wrapper";

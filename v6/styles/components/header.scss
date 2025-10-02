@@ -1,0 +1,11 @@
+/** Haus á síðum **/
+
+header {
+  margin-top: var(--vertical-space);
+  text-align: center;
+}
+
+header h1 {
+  font-size: calc(var(--font-size-headings) * 2);
+  text-transform: uppercase;
+}

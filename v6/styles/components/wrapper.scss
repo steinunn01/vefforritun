@@ -1,0 +1,27 @@
+/**
+ * Eftirfarandi setur upp grunn umbrot (layout) síðu með flexbox.
+ * Við förum yfir flexbox í viku 4 + verkefni 4 en þangað til er hægt að nota þetta
+ * sem grunn og án breytinga.
+ * Athugið að til þess að þetta virki þar að setja <div class="wrapper"> utan um allt efni 
+ * innan <body> sem á að fylgja þessu (<nav> ætti að vera undanskilið).
+ */
+.wrapper {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 100%;
+  gap: var(--vertical-space);
+
+  /* grid items eru miðjuð */
+  justify-items: center;
+
+  /* pláss fyrir nav, það er nákvæmlega svona hátt */
+  margin-top: var(--height-nav);
+  width: 100%;
+  min-height: 100vh;
+
+  background-color: var(--color-background-primary);
+}
+
+.wrapper main {
+  flex: 1;
+}
